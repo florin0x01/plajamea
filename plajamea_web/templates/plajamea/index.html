@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+<body>
+ <h3> Welcome to Plajamea </h3>
+ <a href="/menu">Click pt meniu </a>
+
+ <div style="margin:0 auto; width:200px;">
+ {% if isLoggedIn %}
+     {% if username %}
+        <h5> Welcome {{ username }} </h5>
+     {% endif %}
+    <a href="/userhome">My Home</a>
+     <a href="/logout">Logout</a>
+    <br />
+     Weather in {{ city }} : {{ temp_c }} Celsius
+     Air Quality {{ co }}
+ {% else %}
+     <form action="/login" method="POST">
+            User: <input type="text" name="username" id="username">
+        <button> Login </button>
+     </form>
+ {% endif %}
+ </div>
+</body>
+</html>
